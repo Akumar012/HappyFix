@@ -13,7 +13,7 @@ import Window_AC from './services/Window_Ac.png'
 import wmAuto from './services/wmauto.jpeg'
 import led from './services/led.jpg'
 import contact from './contact.jpg'
-import WhatsApp from './Whatsapp.svg'
+import WhatsApp from './WhatsApp.svg'
 export const assets = {
   WhatsApp,
   logo,
