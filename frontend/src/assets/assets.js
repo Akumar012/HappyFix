@@ -1,4 +1,4 @@
-import logo from './heroSection/logo.png';
+import logo from './heroSection/Logo.png';
 import poster from './heroSection/poster.png'
 import avatar1 from './heroSection/1.png'
 import avatar2 from './heroSection/2.png'
