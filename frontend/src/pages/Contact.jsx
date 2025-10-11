@@ -65,7 +65,7 @@ const Contact = () => {
                     href="mailto:info@aidhiveworkshop.com"
                     className="text-blue-600 font-medium"
                   >
-                    info@aidhiveworkshop.com
+                    raju.badetiya305@gmail.com
                   </a>
                 </p>
 
@@ -205,7 +205,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <ContactDetails />
+      {/* <ContactDetails /> */}
     </>
   );
 };

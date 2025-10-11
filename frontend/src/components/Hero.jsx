@@ -12,9 +12,9 @@ const Hero = () => {
         <p className="text-gray-600 text-lg">
           From ACs to TVs, we fix it all. Fast, affordable service that keeps your home running smoothly.
         </p>
-        <button className="px-6 py-3 bg-primary text-white text-lg font-medium rounded-md w-fit hover:bg-primary/90 transition">
+        <a className="cursor-pointer px-6 py-3 bg-primary text-white text-lg font-medium rounded-md w-fit hover:bg-primary/90 transition" href="/contact">
           Contact Us
-        </button>
+        </a>
 
         {/* Customer Avatars */}
         <div className="flex flex-row gap-4 items-center mt-4">

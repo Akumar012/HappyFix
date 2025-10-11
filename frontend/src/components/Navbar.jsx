@@ -84,17 +84,10 @@ const Navbar = () => {
 
         {/* Right Buttons */}
         <div className="hidden md:flex gap-4 items-center">
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive ? "text-blue-600 font-semibold" : "hover:text-blue-600"
-            }
-          >
-            Contact
-          </NavLink>
+
 
           <button
-  onClick={() => navigate("/book")}
+  onClick={() => navigate("/contact")}
   className="cursor-pointer px-4 py-2 bg-gradient-to-r from-[#03447a] via-[#1574c4] to-[#33abe7] text-white rounded-md text-sm md:text-base hover:scale-102 transition-all ease-in-out duration-200 hover:shadow-lg hover:shadow-black/60 focus:outline-none active:scale-95"
   aria-label="Book Appointment"
 >

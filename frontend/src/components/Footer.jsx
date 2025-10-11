@@ -45,10 +45,10 @@ const Footer = () => {
           <div>
             <h6 className="font-semibold text-white mb-4 uppercase tracking-wide">Our Services</h6>
             <ul className="space-y-2 text-sm">
-              <li><a href="/ac-repair" className="hover:text-white transition">AC Repair</a></li>
-              <li><a href="/fridge-repair" className="hover:text-white transition">Fridge Service</a></li>
-              <li><a href="/washing-machine" className="hover:text-white transition">Washing Machine</a></li>
-              <li><a href="/microwave" className="hover:text-white transition">Microwave / Geyser</a></li>
+              <li><a href="/contact" className="hover:text-white transition">AC Repair</a></li>
+              <li><a href="/contact" className="hover:text-white transition">Fridge Service</a></li>
+              <li><a href="/contact" className="hover:text-white transition">Washing Machine</a></li>
+              <li><a href="/contact" className="hover:text-white transition">Microwave / Geyser</a></li>
             </ul>
           </div>
 
@@ -57,32 +57,28 @@ const Footer = () => {
             <h6 className="font-semibold text-white mb-4 uppercase tracking-wide">Follow Us</h6>
             <div className="flex space-x-3">
               <a
-                href="https://facebook.com"
-                target="_blank"
+                href="/contact"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full hover:bg-white hover:text-black transition"
               >
                 <FaFacebookF />
               </a>
               <a
-                href="https://instagram.com"
-                target="_blank"
+                href="/contact"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full hover:bg-white hover:text-black transition"
               >
                 <FaInstagram />
               </a>
               <a
-                href="https://twitter.com"
-                target="_blank"
+               href="/contact"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full hover:bg-white hover:text-black transition"
               >
                 <FaTwitter />
               </a>
               <a
-                href="https://linkedin.com"
-                target="_blank"
+                href="/contact"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center bg-white/10 rounded-full hover:bg-white hover:text-black transition"
               >
