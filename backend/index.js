@@ -132,6 +132,12 @@ app.post('/webhook', (req, res) => {
 
 if (process.env.NODE_ENV === 'production') {
 
+    import('dotenv')
+    .then(mod => mod.config())
+    .catch(() => {
+      console.warn('dotenv not installed; skipping');
+    });
+
     // try a few likely locations for the frontend build (backend/frontend/build OR ../frontend/build)
     const possibleBuildDirs = [
         path.join(__dirname, 'frontend', 'dist'),
