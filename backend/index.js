@@ -130,28 +130,50 @@ app.post('/webhook', (req, res) => {
     }
 });
 
+// if (process.env.NODE_ENV === 'production') {
+
+//     import('dotenv')
+//     .then(mod => mod.config())
+//     .catch(() => {
+//       console.warn('dotenv not installed; skipping');
+//     });
+
+//     // try a few likely locations for the frontend build (backend/frontend/build OR ../frontend/build)
+//     const possibleBuildDirs = [
+//         path.join(__dirname, 'frontend', 'dist'),
+//         path.join(__dirname, '..', 'frontend', 'dist'),
+//         path.join(__dirname, '..', '..', 'frontend', 'dist') // in case of monorepo with 'dist' folder
+//     ];
+
+//     const buildDir = possibleBuildDirs.find(dir => fs.existsSync(path.join(dir, 'index.html')));
+
+//     if (!buildDir) {
+//         console.warn('Frontend build not found. Run `npm run build --prefix frontend` (or from project root: `npm run build`). Checked paths:', possibleBuildDirs);
+//     } else {
+//         app.use(express.static(buildDir));
+//         app.get(/.*/, (req, res) => {
+//             res.sendFile(path.join(buildDir, 'index.html'));
+//         });
+//     }
+// }
+
 if (process.env.NODE_ENV === 'production') {
 
-    import('dotenv')
-    .then(mod => mod.config())
-    .catch(() => {
-      console.warn('dotenv not installed; skipping');
-    });
-
-    // try a few likely locations for the frontend build (backend/frontend/build OR ../frontend/build)
     const possibleBuildDirs = [
         path.join(__dirname, 'frontend', 'dist'),
         path.join(__dirname, '..', 'frontend', 'dist'),
-        path.join(__dirname, '..', '..', 'frontend', 'dist') // in case of monorepo with 'dist' folder
+        path.join(__dirname, '..', '..', 'frontend', 'dist')
     ];
 
-    const buildDir = possibleBuildDirs.find(dir => fs.existsSync(path.join(dir, 'index.html')));
+    const buildDir = possibleBuildDirs.find(dir => 
+        fs.existsSync(path.join(dir, 'index.html'))
+    );
 
     if (!buildDir) {
-        console.warn('Frontend build not found. Run `npm run build --prefix frontend` (or from project root: `npm run build`). Checked paths:', possibleBuildDirs);
+        console.warn('Frontend build not found. Checked paths:', possibleBuildDirs);
     } else {
         app.use(express.static(buildDir));
-        app.get(/.*/, (req, res) => {
+        app.get('*', (req, res) => {
             res.sendFile(path.join(buildDir, 'index.html'));
         });
     }
@@ -160,4 +182,5 @@ if (process.env.NODE_ENV === 'production') {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+
 });
