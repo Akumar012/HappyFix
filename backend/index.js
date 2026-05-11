@@ -66,7 +66,7 @@ app.post('/send-message', (req, res) => {
 });
 
 // Webhook endpoint to handle the response (Confirm/Cancel)
-app.post('/webhook', (req, res) => {
+app.post('/webhook/', (req, res) => {
     const userResponse = req.body.Body; // User's response (Confirm/Cancel)
     const recipient = req.body.From; // User's WhatsApp number
     const appliance = formData.appliance || "Appliance";
