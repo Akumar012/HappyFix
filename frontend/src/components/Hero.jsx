@@ -11,7 +11,7 @@ const Hero = () => {
           Fast & Reliable <br /> Appliance Repair at Your Doorstep
         </h1>
         <p className="text-gray-600 text-lg">
-          From ACs to TVs, we fix it all. Fast, affordable service that keeps your home running smoothly.
+          HappyFix | Best Appliance Repair & AC Service in Jaipur
         </p>
         <Link className="cursor-pointer px-6 py-3 bg-primary text-white text-lg font-medium rounded-md w-fit hover:bg-primary/90 transition" to="/contact">
           Contact Us

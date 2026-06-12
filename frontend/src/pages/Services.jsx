@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTools, FaSnowflake, FaTv, FaWater, FaPlug, FaFire } from "react-icons/fa";
+import { SEO, generateServiceSchema } from "../components/SEO";
 
 const Services = () => {
   const services = [
@@ -35,37 +36,59 @@ const Services = () => {
     },
   ];
 
-  return (
-    <section className="pt-24 pb-20 bg-gray-50">
-      <div className="container mx-auto px-4 md:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-          Our <span className="text-blue-600">Services</span>
-        </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-          From ACs to washing machines, our technicians provide fast and affordable appliance repairs right at your doorstep.
-        </p>
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: services.map((service, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: generateServiceSchema(service.title, service.desc)
+    }))
+  };
 
-        {/* Grid layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300"
-            >
-              <div className="flex justify-center mb-4">{service.icon}</div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">{service.title}</h3>
-              <p className="text-gray-600 text-sm mb-4">{service.desc}</p>
-              <a
-                href="/book"
-                className="text-blue-600 font-medium hover:underline"
+  return (
+    <>
+          <SEO
+      title="AC Repair Service in Jaipur"
+      description="Fast and reliable AC repair and maintenance service in Jaipur with doorstep support."
+      url="/ac-repair-jaipur"
+      schema={generateServiceSchema(
+        "AC Repair Service",
+        "Professional AC repair service in Jaipur"
+      )}
+    />
+      
+      <section className="pt-24 pb-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Our <span className="text-blue-600">Services</span>
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-12">
+            From ACs to washing machines, our technicians provide fast and affordable appliance repairs right at your doorstep.
+          </p>
+
+          {/* Grid layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300"
               >
-                Book Now →
-              </a>
-            </div>
-          ))}
+                <div className="flex justify-center mb-4">{service.icon}</div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">{service.title}</h3>
+                <p className="text-gray-600 text-sm mb-4">{service.desc}</p>
+                <a
+                  href="/book"
+                  className="text-blue-600 font-medium hover:underline"
+                >
+                  Book Now →
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
