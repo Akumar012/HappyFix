@@ -173,7 +173,7 @@ if (process.env.NODE_ENV === 'production') {
         console.warn('Frontend build not found. Checked paths:', possibleBuildDirs);
     } else {
         app.use(express.static(buildDir));
-        app.get('*', (req, res) => {
+        app.get('/*splat', (req, res) => {
             res.sendFile(path.join(buildDir, 'index.html'));
         });
     }
